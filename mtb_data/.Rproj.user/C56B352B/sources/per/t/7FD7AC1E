@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574454535472.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1669738321",
+    "id" : "7FD7AC1E",
+    "lastKnownWriteTime" : 1574454608,
+    "last_content_update" : 1574454608339,
+    "path" : "~/mtb_data/mtb_data_manip.R",
+    "project_path" : "mtb_data_manip.R",
+    "properties" : {
+        "cursorPosition" : "13,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,13 @@
+library(tidyverse)
+library(treewas)
+library(ape)
+
+
+meta_raw <- read_csv("mtb_meta.csv")
+isos_raw <- read_table("mtb_iso_list.txt")
+
+strains <- isos_raw
+meta <- select(meta_raw, isolates, INH, RIF, EMB, STR, CIP, CYS, CAP, ETA, KAN, OFLX, PAS, PZA, AMK, MOXI, PRO, CLO, RBU, LEVO)
+meta[meta == "NULL"] <- NA
+
+isos_meta <- semi_join(meta, strains, by = "isolates")

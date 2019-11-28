@@ -1,0 +1,174 @@
+isolate,host_pathology,gwas_group,country
+26695_Tomb,Gastritis,Non Atrophic Gastritis,UK
+ELS37,gastric cancer,Gastric Cancer,El Salvador
+HPAG1,atrophic gastritis,Progressive towards Cancer,Sweden
+SJM180,Gastritis,Non Atrophic Gastritis,Peru
+Hp_A-14,Gastritis,Non Atrophic Gastritis,USA
+Hp_A-26,Gastritis,Non Atrophic Gastritis,USA
+Hp_A-27,Gastritis,Non Atrophic Gastritis,USA
+Hp_H-11,Gastritis,Non Atrophic Gastritis,USA
+Hp_H-9,Gastritis,Non Atrophic Gastritis,USA
+Hp_P-15,Gastritis,Non Atrophic Gastritis,USA
+Hp_P-16,Gastritis,Non Atrophic Gastritis,USA
+Hp_P-23,Gastritis,Non Atrophic Gastritis,USA
+Hp_P-30,Gastritis,Non Atrophic Gastritis,USA
+Hp_P-74,Gastritis,Non Atrophic Gastritis,USA
+N6,Gastritis,Non Atrophic Gastritis,Burma
+NQ4200,intestinal metaplasia,Progressive towards Cancer,Colombia
+NQ4228,intestinal metaplasia,Progressive towards Cancer,Colombia
+R037c,asymptomatic,Non Atrophic Gastritis,Canada
+R038b,asymptomatic,Non Atrophic Gastritis,Canada
+R046Wa,asymptomatic,Non Atrophic Gastritis,Canada
+R32b,asymptomatic,Non Atrophic Gastritis,Canada
+UM037,Stomach fundus tumor,Gastric Cancer,Malaysia
+GC11-HL,Non cardia gastric cancer instestinal type,Gastric Cancer,France
+GC23-HL,Non cardia gastric cancer IT,Gastric Cancer,France
+GC26-HL,Non cardia gastric cancer DT,Gastric Cancer,France
+GC27-HL,Non cardia gastric cancer IT,Gastric Cancer,France
+GC31-B,GIST,Gastric Cancer,France
+GC34-HL,gastric cancer,Gastric Cancer,France
+GC43-HL,Non cardia gastric cancer IT,Gastric Cancer,France
+GC54-HL,Non cardia gastric cancer IT,Gastric Cancer,France
+GC65-HL,gastric cancer,Gastric Cancer,France
+GC67-HL,gastric cancer,Gastric Cancer,France
+GC30-HL,Non cardia gastric cancer DT,Gastric Cancer,France
+GC52-HL,Non cardia gastric cancer IT,Gastric Cancer,France
+3800,Gastritis,Non Atrophic Gastritis,France
+3745,Gastritis,Non Atrophic Gastritis,France
+3697,Gastritis,Non Atrophic Gastritis,France
+3699,Gastritis,Non Atrophic Gastritis,France
+3746,Gastritis,Non Atrophic Gastritis,France
+GC69-HL,gastric cancer,Gastric Cancer,France
+BM013A,Asymptomatic,Non Atrophic Gastritis,Australia
+BM012A,Asymptomatic,Non Atrophic Gastritis,Australia
+Nic20_A,Intestinal metaplasia and atrophy,Progressive towards Cancer,Nicaragua
+21580,gastric cancer,Gastric Cancer,Belgium
+30908,Normal stomach,Non Atrophic Gastritis,Belgium
+30950,gastric cancer,Gastric Cancer,Belgium
+31235,Normal stomach,Non Atrophic Gastritis,Belgium
+36166,Normal stomach,Non Atrophic Gastritis,Belgium
+38185,gastric cancer,Gastric Cancer,Belgium
+448,Normal stomach,Non Atrophic Gastritis,UK
+456,Normal stomach,Non Atrophic Gastritis,UK
+518,Normal stomach,Non Atrophic Gastritis,UK
+HE_C1,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C32,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C33,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C34,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C38,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C40,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C50,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C52,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C55,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C57,Cardia gastric cancer,Gastric Cancer,Sweden
+HE_C58,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C59,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C66,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C73,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C9,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C11,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C13,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C18,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C23,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_C30,Non-cardia gastric cancer,Gastric Cancer,Sweden
+HE_NC1-1,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC13-6,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC14-2,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC18-1,"Antrum Met, Corpus Atr + Met",Progressive towards Cancer,Sweden
+HE_NC18-2,"Antrum Met, Corpus Atr + Met",Progressive towards Cancer,Sweden
+HE_NC18-4,"Antrum Atr + Met, Corpus NAG",Progressive towards Cancer,Sweden
+HE_NC13-5,"Antrum Met, Corpus NAG",Progressive towards Cancer,Sweden
+HE_NC19-3,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC19-5,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC20-5,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC1-2,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC23-2a,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC24-6,"Antrum NAG, Corpus Atr",Progressive towards Cancer,Sweden
+HE_NC26-4,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC27-4,"Antrum NAG, Corpus Atr + Met",Progressive towards Cancer,Sweden
+HE_NC29-2,Antrum and Corpus Atr + Met,Progressive towards Cancer,Sweden
+HE_NC30-2,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC30-3,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC32-4,"Antrum Met, Corpus NAG",Progressive towards Cancer,Sweden
+HE_NC32-5,"Antrum Met, Corpus NAG",Progressive towards Cancer,Sweden
+HE_NC5-3,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC36-3,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC38-2,Antrum and Corpus Atr + Met,Progressive towards Cancer,Sweden
+HE_NC38-4,"Antrum Met, Corpus NAG",Progressive towards Cancer,Sweden
+HE_NC38-5,Antrum and Corpus Atr + Met,Progressive towards Cancer,Sweden
+HE_NC39-3,Non Atrophic Gastritis,Non Atrophic Gastritis,Sweden
+HE_NC47-5,"Antrum Met, Corpus NAG",Progressive towards Cancer,Sweden
+HE_NC55-1,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC55-2,"Antrum Atr + Met, Corpus Atr",Progressive towards Cancer,Sweden
+HE_NC55-5,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC60-1,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC60-3,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC61-4,"Antrum Atr + Met, Corpus NAG",Progressive towards Cancer,Sweden
+HE_NC89-4,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC9-1,Non-atrophic gastritis,Non Atrophic Gastritis,Sweden
+HE_NC11-1,Antrum and Corpus Atrophy,Progressive towards Cancer,Sweden
+2012-26,Metaplasia,Progressive towards Cancer,Mexico
+22025,Gastritis,Non Atrophic Gastritis,Colombia
+ms1055,gastric cancer,Gastric Cancer,Mexico
+22402,gastric cancer,Gastric Cancer,Colombia
+22087,Gastritis,Non Atrophic Gastritis,Colombia
+26084,gastric cancer,Gastric Cancer,Colombia
+2004-20,Metaplasia,Progressive towards Cancer,Mexico
+2005-98,Gastritis,Non Atrophic Gastritis,Mexico
+ms203,Gastritis,Non Atrophic Gastritis,Mexico
+26093,gastric cancer,Gastric Cancer,Colombia
+ms1078,gastric cancer,Gastric Cancer,Mexico
+2006-52,gastric cancer,Gastric Cancer,Mexico
+2006-407,Gastritis,Non Atrophic Gastritis,Mexico
+22346,Metaplasia,Progressive towards Cancer,Colombia
+ms15,Gastritis,Non Atrophic Gastritis,Mexico
+22337,Atrophic Gastritis,Progressive towards Cancer,Colombia
+ms23,Gastritis,Non Atrophic Gastritis,Mexico
+ms2,Gastritis,Non Atrophic Gastritis,Mexico
+22341,Metaplasia,Progressive towards Cancer,Colombia
+2006-56,Metaplasia,Progressive towards Cancer,Mexico
+22023,Gastritis,Non Atrophic Gastritis,Colombia
+22327,Atrophic Gastritis,Progressive towards Cancer,Colombia
+ms931,gastric cancer,Gastric Cancer,Mexico
+2005-100,Gastritis,Non Atrophic Gastritis,Mexico
+ms1080,gastric cancer,Gastric Cancer,Mexico
+ms13,Gastritis,Non Atrophic Gastritis,Mexico
+26100,gastric cancer,Gastric Cancer,Colombia
+22046,Metaplasia,Progressive towards Cancer,Colombia
+2006-479,Gastritis,Non Atrophic Gastritis,Mexico
+22389,Gastritis,Non Atrophic Gastritis,Colombia
+22013,Metaplasia,Progressive towards Cancer,Colombia
+22362,Atrophic Gastritis,Progressive towards Cancer,Colombia
+2005-126,Metaplasia,Progressive towards Cancer,Mexico
+2003-103,Metaplasia,Progressive towards Cancer,Mexico
+22367,Gastritis,Non Atrophic Gastritis,Colombia
+22021,Metaplasia,Progressive towards Cancer,Colombia
+2006-480,Metaplasia,Progressive towards Cancer,Mexico
+22385,Gastritis,Non Atrophic Gastritis,Colombia
+2006-4,Gastritis,Non Atrophic Gastritis,Mexico
+22370,Gastritis,Non Atrophic Gastritis,Colombia
+22311,Atrophic Gastritis,Progressive towards Cancer,Colombia
+22390,Metaplasia,Progressive towards Cancer,Colombia
+22339,Atrophic Gastritis,Progressive towards Cancer,Colombia
+22312,Atrophic Gastritis,Progressive towards Cancer,Colombia
+22322,Gastritis,Non Atrophic Gastritis,Colombia
+22331,Metaplasia,Progressive towards Cancer,Colombia
+26024,Atrophic Gastritis,Progressive towards Cancer,Colombia
+22368,Metaplasia,Progressive towards Cancer,Colombia
+22360,Metaplasia,Progressive towards Cancer,Colombia
+22378,Gastritis,Non Atrophic Gastritis,Colombia
+22019,Atrophic Gastritis,Progressive towards Cancer,Colombia
+22020,Atrophic Gastritis,Progressive towards Cancer,Colombia
+22315,Metaplasia,Progressive towards Cancer,Colombia
+22335,Atrophic Gastritis,Progressive towards Cancer,Colombia
+ms176,Gastritis,Non Atrophic Gastritis,Mexico
+22393,Atrophic Gastritis,Progressive towards Cancer,Colombia
+22093,gastric cancer,Gastric Cancer,Colombia
+22095,Atrophic Gastritis,Progressive towards Cancer,Colombia
+22347,Metaplasia,Progressive towards Cancer,Colombia
+2011-41,Gastritis,Non Atrophic Gastritis,Mexico
+22388,Metaplasia,Progressive towards Cancer,Colombia
+22351,Metaplasia,Progressive towards Cancer,Colombia
+22384,Gastritis,Non Atrophic Gastritis,Colombia
+24008,Atrophic Gastritis,Progressive towards Cancer,Colombia
+ms965,gastric cancer,Gastric Cancer,Mexico
