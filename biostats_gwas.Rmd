@@ -23,9 +23,7 @@ Why may the phylogenetic approach used in the R package treeWAS, which is based 
 
 Collins and Didelot, the authors of the tool, claim that treeWAS outperforms these other approaches in both terms of not only statistical power, but also in the appropriateness of the approach when considering bacterial population structure and events of homologous recombination.
 
-To explore this claim, treeWAS was run on two data sets that have been previously analyzed and published using these alternative GWAS approaches: the first is a genome collection of _Helicobacter pylori_, a highly recombinant bacterial pathogen, and the second is a genome collection of _Mycobacterium tuberculosis_, a clonal bacterial pathogen that undergoes almost no recombination. 
-
-Both data sets containing associated phenotypic and clinical metadata required for GWAS, and the results will be compared to the published findings of each study.
+To explore this claim, treeWAS was run on a genomic data set of _Mycobacterium tuberculosis_, a clonal bacterial pathogen that undergoes almost no recombination, that had been previously analyzed and published using these a PCA-LMM GWAS approach, the results of which will be compared.
    
 ---
 
@@ -33,11 +31,11 @@ Both data sets containing associated phenotypic and clinical metadata required f
 
 #### What are GWAS studies and why are they important in bacterial contexts?
 
-GWAS attempts to identify causative relationships between genetic variants and phenotypic outcomes within a population. GWAS is an inherently statistical approach, concerned with maximizing precision and power in its analysis.
+GWAS attempts to identify causative relationships between genetic variants and phenotypic outcomes within a population. It is an inherently statistical approach, concerned with maximizing precision and power in its analysis.
 
 Bacterial GWAS is a top-down approach to conducting genetic research, compared to bottom-up approaches rooted in molecular biology like creating knock outs, mutant strains, etc.
 
-One approach to GWAS is an allele-counting method, which looks for an increased presence of a certain allele at a loci in cases relative to controls. This contrasts with homoplasy approaches, which look at the occurrence of repeated and independently forming mutations occurring on branches of cases, relative to controls, on a phylogenetic tree. Put simply, homoplasy is the presence of similar genetic loci on different branches of a phylogenetic tree. treeWAS, for example is a homoplasy approach to GWAS.
+One approach to GWAS is an **allele-counting** method, which looks for an increased presence of a certain allele at a loci in cases relative to controls. This contrasts with **homoplasy** approaches, which look at the occurrence of repeated and independently forming mutations occurring on branches of cases, relative to controls, on a phylogenetic tree. Put simply, homoplasy is the presence of similar genetic loci on different branches of a phylogenetic tree. treeWAS, for example is a homoplasy approach to GWAS, whereas PCA-LMM is an allele-counting approach.
 
 Homoplasy approaches account for the effects of population structure and linkage disequilibrium inherently in its design. As well, homoplasy counting requires a much smaller sample size to reach statistical significance compared to allele counting.
 
@@ -45,7 +43,7 @@ Homoplasy approaches account for the effects of population structure and linkage
 
 #### What are the issues that arise when conducting bacterial GWAS?
 
-A key issue when conducting bacterial GWAS is the confounding effect of genetic relatedness between different bacterial isolates and strains. This is due to the fact that there exist distinct lineages of clonally reproducing bacterial strains, which can result in suprious associations arising in association studies.
+A key issue when conducting bacterial GWAS is the confounding effect of genetic relatedness between different bacterial isolates and strains. This is due to the fact that there exist distinct lineages of clonally reproducing bacterial strains, which can result in suprious associations arising in association studies. This results in higher false positive of type I error rates.
 
 Unlike with humans, almost the entire bacterial chromosome is under linkage disequilibrium. What results is a patchwork of recombined regions on a tract of linked regions called a clonal frame, where all regions of the clonal frame are in linkage disequilibrium.
 
@@ -71,11 +69,11 @@ Approaches to correct for population structure, including PCA, reduce the statis
     
 #### How does treeWAS work?
 
-The authors of the treeWAS tool and package claim that their approach balances a low false positive rate, high sensitivity, and high positive predictive value. This contrasts with multivariate analysis approaches, which trade strong sensitivity for a weak positive predictive value, and cluster-based approaches, which perform moderately well in both positive predictive value and sensitivity, but do not factor in the clonal population structure of bacteria, as well as the occurrence of homologous recombination.
+The authors of the treeWAS package claim that their approach balances a low false positive rate, high sensitivity, and high positive predictive value. This contrasts with multivariate analysis approaches, which trade strong sensitivity for a weak positive predictive value, and cluster-based approaches, which perform moderately well in both positive predictive value and sensitivity, but do not factor in the clonal population structure of bacteria, as well as the occurrence of homologous recombination.
 
-treeWAS was designed to be appropriate to use both with highly clonal bacteria and extremely recombinant ones (through the implementation of ClonalFrameML).
+treeWAS was designed to be appropriate to use both with highly clonal bacteria and extremely recombinant ones (through the implementation of the recombination detection tool ClonalFrameML).
 
-When compared to other cluster-based or dimensional reduction GWAS approaches, treeWAS performs better in terms of both power and precision on a simulated dataset.
+When compared to other cluster-based or dimensional reduction GWAS approaches, treeWAS performs better in terms of both power and precision on simulated data.
 
 treeWAS uses a null genetic dataset to conduct hypothesis tests on the validity of associations seen in the test data. This null dataset maintains the following elements from the test dataset: clonal genealogy, terminal phenotype, genetic composition and homoplasy (substitutions per site due to both mutation and recombination).
 
@@ -87,7 +85,7 @@ Comparisons between genotype-phenotype associations in the null dataset and the 
    
 #### treeWAS workflow
 
-**Step 1:** Phylogenetic reconstruction (you can input a tree within the tool’s parameters)
+**Step 1:** Phylogenetic reconstruction (however, you can input a tree within the tool’s parameters)
 
 **Step 2:** Compute the homoplasy distribution of your test data using the genetic data.
 
@@ -98,13 +96,13 @@ Comparisons between genotype-phenotype associations in the null dataset and the 
     - variants occur on different branches  
     - the simulated dataset resembles the test dataset in terms of population structure and genetic composition, but not association with phenotypes  
 
-**Step 4:** Ancestral state estimation
+**Step 4:** Ancestral state estimation  
   - to determine the likely genetic composition of nodes in the tree, for the purpose of conducting the association tests  
   
-**Step 5:** Three different tests are applied to each loci 
+**Step 5:** Three different association tests are applied to each loci  
   - treeWAS utilizes three scores of association to enhance the statistical power of the tool  
   
-  Firstly, a null distribution of the three association score statistics is calculated by measuring associations between the null loci and the true phenotypes. These will represent the null hypothesis of our tests.
+  Firstly, a null distribution of the three association score statistics is calculated by measuring associations between the null loci and the true phenotypes. These represent the null hypothesis of treeWAS's hypothesis tests.
   
   Then the three association tests are done on our test dataset.
   
@@ -126,19 +124,20 @@ Comparisons between genotype-phenotype associations in the null dataset and the 
 ![](https://jeremiahyarmie.github.io/jeremiahyarmie.github.io/treewas_test2.png)
 
   -Measures the degree of parallel change in genotype and phenotype across tree branches.  
-  -Counts the number of branches containing a simultaneous substitution in both genotype and phenotype.   -Simultaneous substitutions indicate a strong relationship between genotype and phenotype.  
+  -Counts the number of branches containing a simultaneous substitution in both genotype and phenotype.   
+  -Simultaneous substitutions indicate a strong relationship between genotype and phenotype.  
   -Able to detect associations arising through similar or complementary pathways.  
 
 ---
 
   Test 3:  
-  -The **subsequent score** measures the proportion of the entire tree in which genotype and phenotype coexist
+  -The **subsequent score** measures the proportion of the entire tree in which genotype and phenotype coexist.  
     
 ![](https://jeremiahyarmie.github.io/jeremiahyarmie.github.io/treewas_test3.png)
 
-  -Allows us to measure in what proportion of tree branches we expect the genotype and phenotype to be in the same state  
+  -Allows us to measure in what proportion of tree branches we expect the genotype and phenotype to be in the same state.  
 
-**Step 6:** Finally, a significance threshold is drawn after correcting for multiple testing, considering both the multiple loci and the three association tests used.
+**Step 6:** Finally, a significance threshold is drawn after correcting for multiple testing, considering both the multiple loci and the three association tests used.  
   -By accounting for the entire tree, the authors of treeWAS have the ability to utilize three different association tests, greatly increasing the statistical power of the tool.  
   
 ---
@@ -159,26 +158,32 @@ While PCA GWAS approaches have a rather high sensitivity, being able to detect a
 
 ### Project:
 
-The two datasets used in this project, collections of _Helicobacter pylori_ and _Mycobacterium tuberculosis genomes_, were selected to be representative of the two ends of the spectrum when it comes to genetic variability and plasticity. These two datasets were chosen to explore the robustness of how treeWAS handles of recombinant genomes, since treeWAS can be integrated with ClonalFrameML to detect regions of recombination in its phylogenetic approach. As well, these two datasets were taken from GWAS studies that both implemented an approach of conducting PCA to account for population structure and then conducting GWAS through a LMM approach.
+The two datasets originally selected to be used in this project, collections of _Helicobacter pylori_ and _Mycobacterium tuberculosis_ genomes, were chosen to be representative of the two ends of the spectrum when it comes to genetic variability and plasticity, since treeWAS is adept at conducting GWAS for both recombinant and clonal bacterial species. As well, these two datasets were taken from GWAS studies that both implemented a PCA-LMM approach.
 
-The _Mycobacterium tuberculosis_ dataset was also corrected for population stratification using dimensional reduction before being analyzed with the software package GEMMA which incorporates a LMM approach. _Mycobacterium tuberculosis_ only has 1.1% homoplasic SNPs within its core genome.
+The _Mycobacterium tuberculosis_ dataset was corrected for population stratification using dimensional reduction before being analyzed with the software package GEMMA which incorporates a LMM approach. _Mycobacterium tuberculosis_ only has 1.1% homoplasic SNPs within its core genome. The phenotypes associated with the _Mycobacterium tuberculosis_ dataset are the various antimicrobial resistance and susceptibility measurements.
 
-The phenotypes associated with the _Mycobacterium tuberculosis_ dataset are the various antimicrobial resistance and susceptibility measurements.
-
-I was also intending on conducting a GWAS analysis of a _Helicobacter pylori_ dataset from  a previous study that included PCA via Eigenvalue Decomposition before identifying SNVs, indels, and gene presence/absence using a k-mer method in bugwas, and conducting a LMM approach. The phenotypes associated with the _Helicobacter pylori_ dataset are the degree of stomach disease progression in patients from which the strains were isolated. The authors of the paper limited the influence of population stratification in their sample selection, however, by only selecting strains of the European sequence type.
+I also intended on conducting a GWAS analysis of a _Helicobacter pylori_ dataset from  a previous study that included PCA via Eigenvalue Decomposition before identifying SNVs, indels, and gene presence/absence using a k-mer method in bugwas, and conducting a LMM approach. The phenotypes associated with the _Helicobacter pylori_ dataset were the degree of stomach disease progression in patients from which the strains were isolated. 
 
 However, after much attempt (any many job failures) to prepare the genomic data for input into treeWAS, I decided that it was too computationally intensive to implement in this project.
 
-Anyway...
+The issues began with the way the data was stored and publically available itself. In Berthenet et al.'s 2018 paper, they stated that all of the data used in their GWAS study was publically available on National Centre for Biotechnology Information's Short Read Archive, but that wasn't the case. Instead, draft genomes in contigs were deposited in the BioProject database without short read files. Despite multiple attempts to produce a multi-aligned FASTA file of the 170 genomes in contigs using various tools including clustal omega, clustal w, and MAFFT, all of the tools failed after several days of running, including on a supercomputer cluster with 64 CPUs and 512 GB of memory. It was after these attempts that I decided to drop the _Helicobacter pylori_ dataset.
 
-If treeWAS truly has the precision and power that the authors claim it does, I expect that the results of the two GWAS analyses will be similar to the PCA/LMM approaches used in the two studies that I drew these datasets from.
+A small subset of the several-thousand genome dataset used in Farhat et al.'s 2019 _Mycobacterium tuberculosis_ GWAS study was done for two reasons. Firstly, it was chosen to be of comparable size to the 170 _Helicobacter pylori_ genomes I was originally intending to analyze. Secondly, this small genome subset was chosen to be able to fit within the short timeframe and computational manner of a class project. Finally, this subset was chosen to see if it would be a barrier to identifying similar loci using the homoplasy approach of treeWAS, since homoplasy GWAS approaches require fewer isolates to reach statistical significance when compared to PCA-LMM approches.
 
-For the _Mycobacterium tuberculosis_ dataset:
+If treeWAS truly has the precision and power that the authors claim it does, I expected that the results of the GWAS analysis would be similar to the PCA/LMM approaches, in terms of identified loci, despite the significantly smaller genome dataset size.
+
+The _Mycobacterium tuberculosis_ phenotypic metadataset was taken from Farhat's study and manipulated in R using tidyverse tools to prepare it for input into treeWAS.
 
 ```{r, include = FALSE}
+#importing the raw phenotypic metadata
 
-mtb_meta_raw <- read_csv("mtb_data/mtb_meta.csv") #reading in the metadata association with the mtb dataset
-mtb_isos_raw <- read_table("mtb_data/mtb_iso_list.txt") #these are all of the isolates used in the analysis
+mtb_meta_raw <- read_csv(here("mtb_data/mtb_meta.csv")) #reading in the metadata association with the mtb dataset
+mtb_isos_raw <- read_table(here("mtb_data/mtb_iso_list.txt")) #this is the subset of all of the isolates -- the isolates to be used in this project's analysis
+
+```
+
+```{r}
+#some data massaging to prepare the phenotypic data for input into treeWAS
 
 mtb_meta <- select(mtb_meta_raw, isolates, INH, RIF, EMB, STR, CIP, CYS, CAP, ETA, KAN, OFLX, PAS, PZA, AMK, MOXI, PRO, CLO, RBU, LEVO) #pruning down the metadata tree to just include isolates and AMR phenotypes
 mtb_meta[mtb_meta == "NULL"] <- NA #the dataset originally came with NULLs instead of NAs
@@ -242,10 +247,35 @@ names(mtb_phen_rbu) <- mtb_isos_meta$isolates
 mtb_phen_levo <- as_vector(mtb_isos_meta$LEVO)
 names(mtb_phen_levo) <- mtb_isos_meta$isolates
 
+```
+
+The _Mycobacterium tuberculosis_ short reads from illumina sequencing were downloaded from the NCBI's Short Read Archive before being run through the PHAC-NML's SNVPhyl single nucleotide variant analysis pipeline.
+
+In short, SNVPhyl maps sequence reads to a reference genome, identifying variants, before filtering them through user-defined parameters, before creating a SNV alignment, a SNV distance matrix, filter and quality statistics, and a phylogenetic tree.
+
+The two outputs of SNVPhyl that are relevant for running treeWAS are:  
+ - a multi-aligned FASTA file of all single nucleotide variants amongst your query genomes.  
+ - a phylogenetic tree in the newick file format.  
+ 
+These files were imported into R with minimal processing before treeWAS was able to be called.
+
+```{r}
+#processing of the DNA sequence data
+
 #next we import our genetic data
-mtb_dna <- read.dna(file = "mtb_data/mtb_snv_align.fasta", format = "fasta") #import our multi-aligned fasta of all isolate genome SNVs
+mtb_dna <- read.dna(file = here("mtb_data/mtb_snv_align.fasta"), format = "fasta") #import our multi-aligned FASTA of all isolate genome SNVs
 mtb_snps <- DNAbin2genind(mtb_dna)@tab #converts all SNVs to a DNA bin matrix
-mtb_tree <- read.tree(file = "mtb_data/mtb_tree.nhx") #import out phylogenetic tree created with FastTree
+mtb_tree <- read.tree(file = here("mtb_data/mtb_tree.nhx")) #import out phylogenetic tree created with FastTree
+
+```
+
+Running treeWAS is simple, with a single line of code being sufficient to run on default parameters. Defaults of note include a p-value threshold of 0.01 and Bonferroni multiple test correcting being turned on.
+
+Several of the phenotypic metadatasets had insufficient data to conduct GWAS, often there were identified resistant strains but not sensitive ones, or the entire metadata vector was full of NAs.
+
+The phenotypic information for levofloxacin, rifabutin, cloxacillin, moxicillin, amoxicillin, pyrazinamide, para-aminosalicylic acid, and ciprofloxacin did not have sufficient information to conduct GWAS.
+
+```{r}
 
 #run treeWAS
 inh <- treeWAS(snps = mtb_snps,
@@ -349,9 +379,7 @@ oflx   <- treeWAS(snps = mtb_snps,
                  #seed = 1)
 ```
 
-For the _Mycobacterium tuberculosis_ dataset, the phenotypic informationfor levo, rbu, clo, pro, moxi, amk, pza, pas, cys, and cip did not have sufficient information to conduct GWAS.
-
-Of cap, emb, eta, inh, kan, oflx, rif, and str, the results can be summarized in the following table:
+Of capreomycin, ethambutol, ethionamide, isoniazid, kanamycin, ofloxacin, rifampin, and streptomycin, the results can be summarized in the following table:
 
 ```{r}
 loci <- c(3696, 3833, 7296, 8943, 17249)
@@ -374,7 +402,15 @@ mtb_results
    
 ### Discussion:
 
-DISCUSSION
+Despite using a dataset an order of magnitude smaller than the initial study, treeWAS was still able to identify five loci that had statistically significant association with various antimicrobial resistance phenotypic traits. Of those five loci, two were ones that were not identified through a PCA-LMM GWAS approach. This presents, at the very least, a potential complimentary aspect this tool may have when conducting other forms of GWAS, if not also treeWAS's ability to perform well conducting GWAS with a smaller sample size, a known strength of homoplasy approaches.
+
+The three loci that were identified by both treeWAS and PCA-LMM GWAS are well-known and characterized resistance markers for _Mycobacterium tuberculosis_, which further validates the results of this exploratory project.
+
+The issues conducting GWAS on the _Helicobacter pylori_ genomic dataset were disappointing. As the bacterium is the subject of my own Master's research project, it is upsetting that I was not able to find a way to make the data analysis work. Further, Berthenet et al.'s 2018 paper is the only instance of GWAS being conducting on _Helicobacter pylori_. The exciting aspect of this, however, is that my familiarness with treeWAS might mean that I may be able to leverage this tool in my own graduate research project.
+
+treeWAS is an extremely easy to use R package. Once a user is familiar with the format that the input files need to be in, it doesn't take very long or much coding and data manipulation to run the tool, which runs extremely quickly, in just a matter of minutes. It is also very easy to use specific arguments to change parameters of the tool, and the output is easy to follow and understand. One improvement I would suggest for the tool is reporting p-values with precision, rather than just indicating whether they are smaller than a Bonferroni corrected threshold of 10^-5. 
+
+Ultimately, I believe that treeWAS is a tool and package of high quality, something that I expect from the Didelot lab, and I am extremely happy that I was able to become familiar and explore the tool with this project.
 
 ---
    
@@ -393,6 +429,8 @@ Falush, D. Bacterial genomics: Microbial GWAS coming of age. _Nat Microbiol_ 1, 
 Farhat, M.R., Freschi, L., Calderon, R. et al. GWAS for quantitative resistance phenotypes in Mycobacterium tuberculosis reveals resistance genes and regulatory regions. _Nat Commun_ 10, 2128 (2019) doi:10.1038/s41467-019-10110-6
 
 Lees, J., Bentley, S. Bacterial GWAS: not just gilding the lily. _Nat Rev Microbiol_ 14, 406 (2016) doi:10.1038/nrmicro.2016.82 
+
+Petkau A, Mabon P, Sieffert C, Knox N, Cabral J, Iskander M, Iskander M, Weedmark K, Zaheer R, Katz L, Nadon C, Reimer A, Taboada E, Beiko R, Hsiao W, Brinkman F, Graham M, Van Domselaar G. (2017) SNVPhyl: a single nucleotide variant phylogenomics pipeline for microbial genomic epidemiology.  _M Gen_ 3(6): doi:10.1099/mgen.0.000116.
 
 Price, A., Patterson, N., Plenge, R. et al. Principal components analysis corrects for stratification in genome-wide association studies. _Nat Genet_ 38, 904–909 (2006) doi:10.1038/ng1847
 
