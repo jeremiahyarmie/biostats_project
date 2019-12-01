@@ -4,11 +4,19 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#install.packages("here")
+#install.packages("tidyverse")
+#install.packages("ape")
+#install.packages("devtools")
+
 library(tidyverse)
 library(here)
-library(treeWAS)
 library(ape)
+
+knitr::opts_chunk$set(echo = TRUE)
+
+#remotes::install_github("caitiecollins/treeWAS")
+library(treeWAS)
 ```
 
 **Jeremiah Yarmie** - 7712088  
